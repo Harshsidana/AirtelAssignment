@@ -12,7 +12,8 @@ import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
 import kotlinx.android.synthetic.main.single_element.view.*
 
-class ElementDelegate : AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelegate.ElementViewHolder>() {
+class ElementDelegate(val onClick: (ApiReponse) -> Unit) :
+    AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelegate.ElementViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup): ElementViewHolder {
@@ -22,7 +23,7 @@ class ElementDelegate : AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelega
                 R.layout.single_element,
                 parent,
                 false
-            )
+            ), onClick
         )
     }
 
@@ -32,6 +33,7 @@ class ElementDelegate : AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelega
 
     override fun onBindViewHolder(
         item: HomeCell,
+
         holder: ElementViewHolder,
         payloads: MutableList<Any>
     ) {
@@ -39,7 +41,8 @@ class ElementDelegate : AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelega
     }
 
 
-    class ElementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ElementViewHolder(itemView: View, private val onClickListener: (ApiReponse) -> Unit) :
+        RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: ApiReponse) {
 
@@ -49,8 +52,10 @@ class ElementDelegate : AbsListItemAdapterDelegate<HomeCell, Cell, ElementDelega
                 Glide.with(avatarImage)
                     .load(item.avatar)
                     .into(avatarImage)
+            }
 
-
+            itemView.setOnClickListener {
+                onClickListener(item)
             }
         }
     }

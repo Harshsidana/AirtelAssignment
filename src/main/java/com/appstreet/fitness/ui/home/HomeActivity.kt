@@ -1,5 +1,6 @@
 package com.appstreet.fitness.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,11 +16,14 @@ import com.appstreet.home.view.AbstractHomeActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 
-class HomeActivity : AbstractHomeActivity() {
+class HomeActivity : AbstractHomeActivity(), Adapter.CellListener {
+
 
     override fun getLayoutRes(): Int {
         return R.layout.activity_home
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,18 +36,35 @@ class HomeActivity : AbstractHomeActivity() {
                         list.add(HomeCell(it.data[i]))
                     }
 
-                    val rvAdapter = Adapter(list)
+                    val rvAdapter = Adapter(list,this)
                     recyclerView.layoutManager = LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
                     recyclerView.adapter = rvAdapter
 
 
                 }
                 is DataState.Failure -> {
-                    showLongToast("Some Error fetching daya")
+                    showLongToast("Some Error fetching details")
                 }
             }
 
         })
+
+
+
+    }
+
+    override fun onCellActivityClick(response: ApiReponse) {
+        val intent = Intent(applicationContext, UserDetails::class.java)
+        val bundle = Bundle()
+        bundle.putString("Username",response.username)
+        bundle.putString("Name",response.name)
+        bundle.putString("Url",response.url)
+        bundle.putString("Avatar",response.avatar)
+        bundle.putString("Repo Description",response.repo.description)
+        bundle.putString("Repo Name",response.repo.name)
+        bundle.putString("Repo Url",response.repo.url)
+        intent.putExtra("Bundle", bundle)
+        startActivity(intent)
 
 
     }
