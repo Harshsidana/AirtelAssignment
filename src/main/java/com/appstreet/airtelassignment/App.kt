@@ -1,8 +1,8 @@
-package com.appstreet.fitness
+package com.appstreet.airtelassignment
 
 import androidx.multidex.MultiDexApplication
 import com.appstreet.base.timber.CrashReportTree
-import com.appstreet.fitness.di.Modules
+import com.appstreet.airtelassignment.di.Modules
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
 

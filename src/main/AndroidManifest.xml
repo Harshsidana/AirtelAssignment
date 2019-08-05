@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.appstreet.fitness">
+          package="com.appstreet.airtelassignment">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-            android:name=".App"
+            android:name="com.appstreet.airtelassignment.App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -13,10 +13,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ui.home.UserDetails">
+        <activity android:name="com.appstreet.airtelassignment.ui.home.UserDetails">
         </activity>
         <activity
-                android:name=".ui.home.HomeActivity"
+                android:name="com.appstreet.airtelassignment.ui.home.HomeActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

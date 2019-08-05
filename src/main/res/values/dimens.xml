@@ -6,4 +6,7 @@
     <dimen name="large">16sp</dimen>
     <dimen name="extra_large">20sp</dimen>
 <dimen name="margin_left">20dp</dimen>
+    <dimen name="header_text">20sp</dimen>
+    <dimen name="value_text">15sp</dimen>
+
 </resources>

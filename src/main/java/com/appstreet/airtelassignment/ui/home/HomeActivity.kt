@@ -1,4 +1,4 @@
-package com.appstreet.fitness.ui.home
+package com.appstreet.airtelassignment.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appstreet.base.cell.Cell
 import com.appstreet.base.extension.showLongToast
 import com.appstreet.base.model.DataState
-import com.appstreet.fitness.R
-import com.appstreet.fitness.ui.home.adapter.Adapter
+import com.appstreet.airtelassignment.R
+import com.appstreet.airtelassignment.ui.home.adapter.Adapter
 import com.appstreet.home.cell.HomeCell
 import com.appstreet.home.model.response.ApiReponse
 import com.appstreet.home.view.AbstractHomeActivity

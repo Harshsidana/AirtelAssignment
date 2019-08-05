@@ -1,7 +1,7 @@
-package com.appstreet.fitness.ui.home
+package com.appstreet.airtelassignment.ui.home
 
 import android.os.Bundle
-import com.appstreet.fitness.R
+import com.appstreet.airtelassignment.R
 import com.bumptech.glide.Glide
 import com.view.AbstractUserDetailActivity
 import kotlinx.android.synthetic.main.activity_user_details.*

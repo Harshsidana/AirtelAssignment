@@ -1,4 +1,4 @@
-package com.appstreet.fitness
+package com.appstreet.airtelassignment
 
 import org.junit.Test
 

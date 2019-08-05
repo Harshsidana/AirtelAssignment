@@ -1,7 +1,7 @@
-package com.appstreet.fitness.ui.home.adapter
+package com.appstreet.airtelassignment.ui.home.adapter
 
 import com.appstreet.base.cell.Cell
-import com.appstreet.fitness.ui.home.adapter.delegate.ElementDelegate
+import com.appstreet.airtelassignment.ui.home.adapter.delegate.ElementDelegate
 import com.appstreet.home.model.response.ApiReponse
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
